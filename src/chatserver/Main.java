@@ -36,7 +36,7 @@ public class Main extends JFrame implements ChatServerListener {
 	}
 	
 	public Main() {
-		super("Chat-Server");
+		super("Server");
 		try {
 			LocateRegistry.createRegistry(1099);
 		} catch (RemoteException e) {

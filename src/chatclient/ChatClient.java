@@ -15,6 +15,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Objects;
 import java.io.*;
 import javax.swing.AbstractAction;
@@ -38,6 +39,7 @@ import javax.swing.text.Keymap;
 
 import chat.ChatServer;
 import chat.Chatter;
+import chatserver.UserInfo;
 
 public class ChatClient extends JFrame{
 	// store the user£¬key£ºusername£¬value£ºcorresponding Chatter
@@ -211,9 +213,15 @@ public class ChatClient extends JFrame{
 		}
 	}
 	
-	public void connect() throws java.rmi.RemoteException, java.net.MalformedURLException, java.rmi.NotBoundException{
+	public boolean connect() throws java.rmi.RemoteException, java.net.MalformedURLException, java.rmi.NotBoundException{
+		boolean ifConnect;
+
 		server = (ChatServer) java.rmi.Naming.lookup("//" + serverAddr + "/ChatServer");
-		server.login(my_name, chatter);
+		ifConnect = server.login(my_name, chatter);
+		if(ifConnect == false){
+			return false;
+		}
+		return true;
 	}
 	
 	protected void disconnect() throws java.rmi.RemoteException {
@@ -367,23 +375,30 @@ public class ChatClient extends JFrame{
 	
 	class ConnectionAction extends AbstractAction {
 		public ConnectionAction() {
-			super("Conect");
-			putValue(Action.SHORT_DESCRIPTION, "Contect to server");
+			super("Connect");
+			putValue(Action.SHORT_DESCRIPTION, "Connected to server");
 			putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control C"));
 		}
 		
 		public void actionPerformed(ActionEvent evt) {
+			boolean ifSuccess;
+
 			dlg.pack();
 			dlg.setLocationRelativeTo(ChatClient.this);
 			dlg.setVisible(true);
+
 			if (dlg.getValue() == JOptionPane.OK_OPTION) {
 				try {
 					my_name = dlg.getUserName();
-					connect();
-					inputBox.setEditable(true);
-					displayBox.setText("");
-					statusLabel.setText(my_name + " Connect");
-					this.setEnabled(false);
+					ifSuccess = connect();
+					if(ifSuccess){
+						inputBox.setEditable(true);
+						displayBox.setText("");
+						statusLabel.setText(my_name + " Connect");
+						this.setEnabled(false);
+					}else{
+						displayBox.setText("Duplicate user name, please try again.\n");
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 					statusLabel.setText("Cannot connect to server");
