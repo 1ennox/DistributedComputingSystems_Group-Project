@@ -259,7 +259,7 @@ public class ChatClient extends JFrame{
 				break;
 			}
 		}
-		display(name + " Leaver the ChatRoom");
+		display(name + " Leave the ChatRoom");
 	}
 	
 	public void receiveChat(String name, String message) {
