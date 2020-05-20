@@ -238,6 +238,7 @@ public class ChatClient extends JFrame{
 		if (server != null)
 			server.logout(my_name);
 	}
+
 	// Send a 'Enter' message on screen for newcomer
 	public void receiveEnter(String name, Chatter chatter, boolean hasEntered) {
 		if (name != null && chatter != null) {
@@ -263,11 +264,11 @@ public class ChatClient extends JFrame{
 	}
 	
 	public void receiveChat(String name, String message) {
-		display(name + ": " + message);
+		display("(Public) " + name + " : " + message);
 	}
 	
 	public void receiveWhisper(String name, String message) {
-		display(name + " private: " + message);
+		display("(Private) " + name + " : " + message);
 	}
 	
 	// bind keyboard
@@ -403,8 +404,8 @@ public class ChatClient extends JFrame{
 					ifSuccess = connect();
 					if(ifSuccess){
 						inputBox.setEditable(true);
-						displayBox.setText("");
-						statusLabel.setText(my_name + " Connect");
+						displayBox.setText("You can post your messages now.\n");
+						statusLabel.setText("(Connected) Your user ID is: " + my_name);
 						this.setEnabled(false);
 					}else{
 						statusLabel.setText("Invalid user name.");
