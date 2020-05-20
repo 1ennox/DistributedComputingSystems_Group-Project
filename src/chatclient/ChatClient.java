@@ -72,7 +72,11 @@ public class ChatClient extends JFrame{
 		setupMenu();
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				exit();
+				try {
+					exit();
+				} catch (RemoteException ex) {
+					ex.printStackTrace();
+				}
 			}
 		});
 		show();
@@ -86,7 +90,11 @@ public class ChatClient extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				exit();
+				try {
+					exit();
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		JMenu options = new JMenu("Option");
@@ -96,7 +104,9 @@ public class ChatClient extends JFrame{
 		setJMenuBar(menuBar);
 	}
 	
-	private void exit() {
+	private void exit() throws RemoteException {
+		hash.remove(my_name);
+		this.dispose();
 		destroy();
 		System.exit(0);
 	}
@@ -397,6 +407,7 @@ public class ChatClient extends JFrame{
 						statusLabel.setText(my_name + " Connect");
 						this.setEnabled(false);
 					}else{
+						statusLabel.setText("Invalid user name.");
 						displayBox.setText("Duplicate user name, please try again.\n");
 					}
 				} catch (Exception e) {

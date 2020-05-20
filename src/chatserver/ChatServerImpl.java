@@ -72,7 +72,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 				while (i.hasNext()) {
 					UserInfo u  = (UserInfo)i.next();
 					if(u.getName().equals(name)) {
-						notifyListener("Duplicated user name: " + name);
+						notifyListener("Duplicate user name: " + name);
 						return false;
 					}
 				}
