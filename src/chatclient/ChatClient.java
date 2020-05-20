@@ -238,7 +238,7 @@ public class ChatClient extends JFrame{
 		if (server != null)
 			server.logout(my_name);
 	}
-	// Send a 'Enter' message on screen for new commer
+	// Send a 'Enter' message on screen for newcomer
 	public void receiveEnter(String name, Chatter chatter, boolean hasEntered) {
 		if (name != null && chatter != null) {
 			hash.put(name, chatter);
@@ -255,7 +255,7 @@ public class ChatClient extends JFrame{
 			hash.remove(name);
 		for (int i = 0; i < usersBox.getItemCount(); i++) {
 			if (name.equals((String) usersBox.getItemAt(i))) {
-				usersBox.remove(i);
+				usersBox.removeItem(usersBox.getItemAt(i));
 				break;
 			}
 		}
