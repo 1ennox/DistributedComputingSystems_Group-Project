@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c85d7c49-20af-4cbc-b225-ce0bcda052a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/chatclient/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ChatClient.java" afterDir="false" />
-    </list>
+    <list default="true" id="c85d7c49-20af-4cbc-b225-ce0bcda052a9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="955" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -226,15 +224,15 @@
       <updated>1589900075866</updated>
       <workItem from="1589900087721" duration="2602000" />
       <workItem from="1589904035282" duration="4657000" />
-      <workItem from="1589960386809" duration="8020000" />
+      <workItem from="1589960386809" duration="8555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15279000" />
+    <option name="totallyTimeSpent" value="15814000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11727079" />
