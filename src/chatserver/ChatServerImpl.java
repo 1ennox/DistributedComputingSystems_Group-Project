@@ -80,7 +80,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 				System.out.print(e);
 			}
 			UserInfo u = new UserInfo(name, c);
-			notifyListener(u.getName() + " Enter the chat room");
+			notifyListener(u.getName() + " Enter the ChatRoom");
 			Iterator itr = chatters.iterator();
 			while (itr.hasNext()) {
 				UserInfo u2 = (UserInfo) itr.next();
@@ -105,7 +105,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 			for (int i = 0; i < chatters.size(); i++) {
 				UserInfo u = (UserInfo) chatters.get(i);
 				if (u.getName().equals(name)) {
-					notifyListener(name + " leave the chat room");
+					notifyListener(name + " leave the ChatRoom");
 					u_gone = u;
 					chatters.remove(i);
 					itr = chatters.iterator();
@@ -115,7 +115,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		}
 		
 		if (u_gone == null || itr == null) {
-			System.out.println("no user by name of " + name + " found: not removing chatter");
+			System.out.println("No user called " + name + " found: cannot removing chatter");
 			return;
 		}
 		
@@ -130,7 +130,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		while (itr.hasNext()) {
 			UserInfo u = (UserInfo) itr.next();
 			if (!name.equals(u.getName()))
-				u.getChatter().receiveChat(name, message);
+				u.getChatter().receivePublicChat(name, message);
 		}
 		notifyListener(name + ":" + message);
 	}

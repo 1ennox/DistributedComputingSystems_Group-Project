@@ -19,12 +19,12 @@ public class ChatterImpl extends java.rmi.server.UnicastRemoteObject implements 
 		client.receiveExit(name);
 	}
 	
-	public void receiveChat(String name, String message) throws java.rmi.RemoteException {
-		client.receiveChat(name, message);
+	public void receivePublicChat(String name, String message) throws java.rmi.RemoteException {
+		client.receivePublicChat(name, message);
 	}
 	
-	public void receiveWhisper(String name, String message) throws java.rmi.RemoteException {
-		client.receiveWhisper(name, message);
+	public void receivePrivateChat(String name, String message) throws java.rmi.RemoteException {
+		client.receivePrivateChat(name, message);
 	}
 	
 	public void serverStop() throws RemoteException {

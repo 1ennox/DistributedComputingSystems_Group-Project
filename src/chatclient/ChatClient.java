@@ -67,7 +67,7 @@ public class ChatClient extends JFrame{
 	}
 	
 	public ChatClient() {
-		super("Chat-Client");
+		super("Multi-user ChatRoom");
 		layoutComponent();
 		setupMenu();
 		addWindowListener(new WindowAdapter() {
@@ -240,34 +240,34 @@ public class ChatClient extends JFrame{
 	}
 
 	// Send a 'Enter' message on screen for newcomer
-	public void receiveEnter(String name, Chatter chatter, boolean hasEntered) {
-		if (name != null && chatter != null) {
-			hash.put(name, chatter);
-			if (!name.equals(my_name)) {
+	public void receiveEnter(String enterUserName, Chatter chatter, boolean hasEntered) {
+		if (enterUserName != null && chatter != null) {
+			hash.put(enterUserName, chatter);
+			if (!enterUserName.equals(my_name)) {
 				if (!hasEntered)
-					display(name + " Enter the ChatRoom");
-				usersBox.addItem(name);
+					display(enterUserName + " Enter the ChatRoom");
+				usersBox.addItem(enterUserName);
 			}
 		}
 	}
 	// Send a 'Leave' message on screen
-	public void receiveExit(String name) {
-		if (name != null && chatter != null)
-			hash.remove(name);
+	public void receiveExit(String exitUserName) {
+		if (exitUserName != null && chatter != null)
+			hash.remove(exitUserName);
 		for (int i = 0; i < usersBox.getItemCount(); i++) {
-			if (name.equals((String) usersBox.getItemAt(i))) {
+			if (exitUserName.equals((String) usersBox.getItemAt(i))) {
 				usersBox.removeItem(usersBox.getItemAt(i));
 				break;
 			}
 		}
-		display(name + " Leave the ChatRoom");
+		display(exitUserName + " Leave the ChatRoom");
 	}
 	
-	public void receiveChat(String name, String message) {
+	public void receivePublicChat(String name, String message) {
 		display("(Public) " + name + " : " + message);
 	}
 	
-	public void receiveWhisper(String name, String message) {
+	public void receivePrivateChat(String name, String message) {
 		display("(Private) " + name + " : " + message);
 	}
 	
@@ -329,7 +329,7 @@ public class ChatClient extends JFrame{
 					String destUserName = (String) usersBox.getSelectedItem();
 					Chatter destChatter = (Chatter) hash.get(destUserName);
 					try {
-						destChatter.receiveWhisper(my_name, message);
+						destChatter.receivePrivateChat(my_name, message);
 					} catch (RemoteException e) {
 						e.printStackTrace();
 					}
@@ -378,7 +378,7 @@ public class ChatClient extends JFrame{
 	
 	//Server Stop and clear all the user
 	public void serverStop() {
-		display("Server Stop");
+		display("Server Stop working.");
 		server = null;
 		hash.clear();
 		connectAction.setEnabled(true);
@@ -404,7 +404,7 @@ public class ChatClient extends JFrame{
 					ifSuccess = connect();
 					if(ifSuccess){
 						inputBox.setEditable(true);
-						displayBox.setText("You can post your messages now.\n");
+						displayBox.setText("You can post your message now.\n");
 						statusLabel.setText("(Connected) Your user ID is: " + my_name);
 						this.setEnabled(false);
 					}else{

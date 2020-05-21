@@ -4,27 +4,27 @@ import java.rmi.RemoteException;
 
 public interface Chatter extends java.rmi.Remote {
 	/**
-	 * 通知用户加入
+	 * inform users' enter behave
 	 */
 	public void receiveEnter(String name, Chatter chatter, boolean hasEntered) throws RemoteException;
 	
 	/**
-	 * 通知用户离开聊天室
+	 * inform users' leaving behave
 	 */
 	public void receiveExit(String name) throws RemoteException;
 	
 	/**
-	 * 用户发言
+	 * user receive messages from server
 	 */
-	public void receiveChat(String name, String message) throws RemoteException;
+	public void receivePublicChat(String name, String message) throws RemoteException;
 	
 	/**
-	 * 私聊
+	 * private chat
 	 */
-	public void receiveWhisper(String name, String message) throws RemoteException;
+	public void receivePrivateChat(String name, String message) throws RemoteException;
 	
 	/**
-	 * 通知服务器停止
+	 * stop the server
 	 */
 	public void serverStop() throws RemoteException;
 	/**

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c85d7c49-20af-4cbc-b225-ce0bcda052a9" name="Default Changelist" comment="" />
+    <list default="true" id="c85d7c49-20af-4cbc-b225-ce0bcda052a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chat/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chat/Chatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chat/Chatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatclient/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatclient/ChatterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ChatterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatserver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatserver/Main.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,9 +26,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chatserver/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+            <state relative-caret-position="1936">
+              <caret line="155" column="56" selection-start-line="155" selection-start-column="56" selection-end-line="155" selection-end-column="56" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#layoutComponents#0;class#Main#0" />
                 <element signature="method#setupMenu#0;class#Main#0" />
                 <element signature="method#setupToolBar#0;class#Main#0" />
@@ -34,10 +43,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="123" column="38" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
+            <state relative-caret-position="385">
+              <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
               <folding>
-                <element signature="method#notifyListener#0;class#ChatServerImpl#0" />
+                <element signature="method#login#0;class#ChatServerImpl#0" />
+                <element signature="method#logout#0;class#ChatServerImpl#0" />
                 <element signature="method#fileToAll#0;class#ChatServerImpl#0" />
                 <element signature="method#fileToOne#0;class#ChatServerImpl#0" />
               </folding>
@@ -48,21 +58,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chatclient/ChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="270" column="27" selection-start-line="270" selection-start-column="27" selection-end-line="270" selection-end-column="27" />
+            <state relative-caret-position="1488">
+              <caret line="406" column="69" selection-start-line="406" selection-start-column="69" selection-end-line="406" selection-end-column="69" />
               <folding>
-                <element signature="e#1933#2100#0" expanded="true" />
-                <element signature="e#2099#2100#0" expanded="true" />
-                <element signature="e#2299#2484#0" expanded="true" />
-                <element signature="e#2483#2484#0" expanded="true" />
-                <element signature="method#layoutComponent#0;class#ChatClient#0" />
+                <element signature="imports" expanded="true" />
                 <element signature="method#destroy#0;class#ChatClient#0" />
-                <element signature="e#7398#7399#0" expanded="true" />
-                <element signature="e#7444#7445#0" expanded="true" />
-                <element signature="e#7496#7497#0" expanded="true" />
-                <element signature="e#7547#7548#0" expanded="true" />
+                <element signature="method#disconnect#0;class#ChatClient#0" />
+                <element signature="method#receiveEnter#0;class#ChatClient#0" />
+                <element signature="method#receiveExit#0;class#ChatClient#0" />
+                <element signature="e#7511#7512#0" expanded="true" />
+                <element signature="e#7564#7565#0" expanded="true" />
                 <element signature="method#addKeymapBindings#0;class#ChatClient#0" />
                 <element signature="method#display#0;class#ChatClient#0" />
+                <element signature="method#sendMessage#0;class#ChatClient#0" />
                 <element signature="method#fileTobyte#0;class#ChatClient#0" />
                 <element signature="method#sendFile#0;class#ChatClient#0" />
                 <element signature="method#serverStop#0;class#ChatClient#0" />
@@ -76,8 +84,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chatclient/ChatterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="456">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chatserver/UserInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chatclient/ConnectDlg.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="827">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chat/Chatter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -91,6 +135,9 @@
       <find>hash</find>
       <find>server</find>
       <find>receiveExit</find>
+      <find>receiveChat</find>
+      <find>receiveWhisper</find>
+      <find>receiveWhis</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,13 +146,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/chat/ChatServer.java" />
+        <option value="$PROJECT_DIR$/src/chat/Chatter.java" />
+        <option value="$PROJECT_DIR$/src/chatclient/ChatterImpl.java" />
+        <option value="$PROJECT_DIR$/src/chatclient/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/chatserver/Main.java" />
         <option value="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" />
-        <option value="$PROJECT_DIR$/src/chatclient/ChatClient.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="955" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -115,8 +165,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,7 +210,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -224,18 +278,20 @@
       <updated>1589900075866</updated>
       <workItem from="1589900087721" duration="2602000" />
       <workItem from="1589904035282" duration="4657000" />
-      <workItem from="1589960386809" duration="8555000" />
+      <workItem from="1589960386809" duration="10993000" />
+      <workItem from="1590025770248" duration="267000" />
+      <workItem from="1590061187046" duration="1798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15814000" />
+    <option name="totallyTimeSpent" value="20317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11727079" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -244,7 +300,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23535791" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23535791" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -287,6 +343,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/ChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chat/Chatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -294,44 +364,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/ChatServer.java">
+    <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="114">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chatclient/ConnectDlg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
+        <state relative-caret-position="827">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chat/Chatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chatclient/ChatterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chatserver/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+        <state relative-caret-position="1936">
+          <caret line="155" column="56" selection-start-line="155" selection-start-column="56" selection-end-line="155" selection-end-column="56" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#layoutComponents#0;class#Main#0" />
             <element signature="method#setupMenu#0;class#Main#0" />
             <element signature="method#setupToolBar#0;class#Main#0" />
             <element signature="method#addTool#0;class#Main#0" />
             <element signature="method#exit#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chatclient/ChatterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
+          <folding>
+            <element signature="method#login#0;class#ChatServerImpl#0" />
+            <element signature="method#logout#0;class#ChatServerImpl#0" />
+            <element signature="method#fileToAll#0;class#ChatServerImpl#0" />
+            <element signature="method#fileToOne#0;class#ChatServerImpl#0" />
           </folding>
         </state>
       </provider>
@@ -343,35 +420,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="123" column="38" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
-          <folding>
-            <element signature="method#notifyListener#0;class#ChatServerImpl#0" />
-            <element signature="method#fileToAll#0;class#ChatServerImpl#0" />
-            <element signature="method#fileToOne#0;class#ChatServerImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chatclient/ChatClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="270" column="27" selection-start-line="270" selection-start-column="27" selection-end-line="270" selection-end-column="27" />
+        <state relative-caret-position="1488">
+          <caret line="406" column="69" selection-start-line="406" selection-start-column="69" selection-end-line="406" selection-end-column="69" />
           <folding>
-            <element signature="e#1933#2100#0" expanded="true" />
-            <element signature="e#2099#2100#0" expanded="true" />
-            <element signature="e#2299#2484#0" expanded="true" />
-            <element signature="e#2483#2484#0" expanded="true" />
-            <element signature="method#layoutComponent#0;class#ChatClient#0" />
+            <element signature="imports" expanded="true" />
             <element signature="method#destroy#0;class#ChatClient#0" />
-            <element signature="e#7398#7399#0" expanded="true" />
-            <element signature="e#7444#7445#0" expanded="true" />
-            <element signature="e#7496#7497#0" expanded="true" />
-            <element signature="e#7547#7548#0" expanded="true" />
+            <element signature="method#disconnect#0;class#ChatClient#0" />
+            <element signature="method#receiveEnter#0;class#ChatClient#0" />
+            <element signature="method#receiveExit#0;class#ChatClient#0" />
+            <element signature="e#7511#7512#0" expanded="true" />
+            <element signature="e#7564#7565#0" expanded="true" />
             <element signature="method#addKeymapBindings#0;class#ChatClient#0" />
             <element signature="method#display#0;class#ChatClient#0" />
+            <element signature="method#sendMessage#0;class#ChatClient#0" />
             <element signature="method#fileTobyte#0;class#ChatClient#0" />
             <element signature="method#sendFile#0;class#ChatClient#0" />
             <element signature="method#serverStop#0;class#ChatClient#0" />
@@ -384,9 +447,79 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>RMIRoom</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

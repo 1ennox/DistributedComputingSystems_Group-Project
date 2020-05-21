@@ -153,7 +153,7 @@ public class Main extends JFrame implements ChatServerListener {
 				startAction.setEnabled(true);
 				this.setEnabled(false);
 			} catch (Exception e) {
-				textArea.append("Server stop failed\n");
+				textArea.append("Cannot stop the server.\n");
 				e.printStackTrace();
 				return;
 			}
