@@ -5,9 +5,9 @@ import chat.*;
 
 // Client interface implementation
 public class ChatterImpl extends java.rmi.server.UnicastRemoteObject implements Chatter {
-	ChatClient client;
+	ChatClientStart client;
 	
-	public ChatterImpl(ChatClient client) throws java.rmi.RemoteException {
+	public ChatterImpl(ChatClientStart client) throws java.rmi.RemoteException {
 		this.client = client;
 	}
 	

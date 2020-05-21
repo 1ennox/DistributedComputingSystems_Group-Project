@@ -43,7 +43,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		notifyListener(STATEMSG[1]);
 		Iterator itr = chatters.iterator();
 		while (itr.hasNext()) {
-			UserInfo u = (UserInfo) itr.next();
+			User u = (User) itr.next();
 			u.getChatter().serverStop();
 		}
 		java.rmi.Naming.unbind(BINDNAME);
@@ -70,7 +70,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 			Iterator i = chatters.iterator();
 			try {
 				while (i.hasNext()) {
-					UserInfo u  = (UserInfo)i.next();
+					User u  = (User)i.next();
 					if(u.getName().equals(name)) {
 						notifyListener("Duplicate user name: " + name);
 						return false;
@@ -79,11 +79,11 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 			}catch(Exception e) {
 				System.out.print(e);
 			}
-			UserInfo u = new UserInfo(name, c);
+			User u = new User(name, c);
 			notifyListener(u.getName() + " Enter the ChatRoom");
 			Iterator itr = chatters.iterator();
 			while (itr.hasNext()) {
-				UserInfo u2 = (UserInfo) itr.next();
+				User u2 = (User) itr.next();
 				u2.getChatter().receiveEnter(name, c, false);
 				c.receiveEnter(u2.getName(), u2.getChatter(), true);
 			}
@@ -98,12 +98,12 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 			System.out.println("null name on logout: cannot remove chatter");
 			return;
 		}
-		UserInfo u_gone = null;
+		User u_gone = null;
 		Iterator itr = null;
 		
 		synchronized (chatters) {
 			for (int i = 0; i < chatters.size(); i++) {
-				UserInfo u = (UserInfo) chatters.get(i);
+				User u = (User) chatters.get(i);
 				if (u.getName().equals(name)) {
 					notifyListener(name + " leave the ChatRoom");
 					u_gone = u;
@@ -120,7 +120,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		}
 		
 		while (itr.hasNext()) {
-			UserInfo u = (UserInfo) itr.next();
+			User u = (User) itr.next();
 			u.getChatter().receiveExit(name);
 		}
 	}
@@ -128,7 +128,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 	public void chat(String name, String message) throws java.rmi.RemoteException {
 		Iterator itr = chatters.iterator();
 		while (itr.hasNext()) {
-			UserInfo u = (UserInfo) itr.next();
+			User u = (User) itr.next();
 			if (!name.equals(u.getName()))
 				u.getChatter().receivePublicChat(name, message);
 		}
@@ -140,7 +140,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		// TODO Auto-generated method stub
 		Iterator itr = chatters.iterator();
 		while (itr.hasNext()) {
-			UserInfo u  = (UserInfo)itr.next();
+			User u  = (User)itr.next();
 			if(!u.getName().equals(my_name)) {
 				u.getChatter().getFile(u.getName(),fileBytes,fileName);
 			}
@@ -154,7 +154,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		Iterator itr = chatters.iterator();
 		try {
 		while (itr.hasNext()) {
-			UserInfo u  = (UserInfo)itr.next();
+			User u  = (User)itr.next();
 			if(u.getName().equals(destChatter)) {
 				u.getChatter().getFile(u.getName(),fileBytes,fileName);
 			}
