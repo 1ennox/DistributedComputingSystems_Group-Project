@@ -124,7 +124,7 @@ public class ChatServerStart extends JFrame implements ChatServerListener {
 			try {
 				server.addListener(ChatServerStart.this);
 				textArea.setText("");
-				server.start();
+				server.start();//GUI "start" button pressed
 				stopAction.setEnabled(true);
 				this.setEnabled(false);
 			} catch (Exception ex) {
@@ -147,7 +147,7 @@ public class ChatServerStart extends JFrame implements ChatServerListener {
 		
 		public void actionPerformed(ActionEvent arg0) {
 			try {
-				server.stop();
+				server.stop();//GUI "stop" button pressed
 				server.removeListense(ChatServerStart.this);
 				startAction.setEnabled(true);
 				this.setEnabled(false);

@@ -24,7 +24,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 	
 	public static ChatServerImpl getInstance() {
 		try {
-			if (server == null) {
+			if (server == null) {//only one server can be started
 				server = new ChatServerImpl();
 			}
 		} catch (RemoteException e) {
@@ -35,7 +35,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 	}
 	
 	public void start() throws RemoteException, MalformedURLException {
-		java.rmi.Naming.rebind(BINDNAME, server);
+		java.rmi.Naming.rebind(BINDNAME, server);//start running the server
 		notifyListener(STATEMSG[0]);
 	}
 	
@@ -71,8 +71,8 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 			try {
 				while (i.hasNext()) {
 					User u  = (User)i.next();
-					if(u.getName().equals(name)) {
-						notifyListener("Duplicate user name: " + name);
+					if(u.getName().equals(name)) {//if the user input the same name
+						notifyListener("Duplicate user name: " + name);//server will not allow him to login
 						return false;
 					}
 				}
@@ -87,7 +87,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 				u2.getChatter().receiveEnter(name, c, false);
 				c.receiveEnter(u2.getName(), u2.getChatter(), true);
 			}
-			chatters.add(u);
+			chatters.add(u);//update server's client list
 			return true;
 		}
 		return false;
@@ -107,7 +107,7 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 				if (u.getName().equals(name)) {
 					notifyListener(name + " leave the ChatRoom");
 					u_gone = u;
-					chatters.remove(i);
+					chatters.remove(i);//remove this user from server's client list
 					itr = chatters.iterator();
 					break;
 				}
@@ -121,16 +121,16 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 		
 		while (itr.hasNext()) {
 			User u = (User) itr.next();
-			u.getChatter().receiveExit(name);
+			u.getChatter().receiveExit(name);//remote invoke function
 		}
 	}
 	
 	public void chat(String name, String message) throws java.rmi.RemoteException {
 		Iterator itr = chatters.iterator();
-		while (itr.hasNext()) {
+		while (itr.hasNext()) {//traverse all the clients exist in the server
 			User u = (User) itr.next();
-			if (!name.equals(u.getName()))
-				u.getChatter().receivePublicChat(name, message);
+			if (!name.equals(u.getName()))//send message to all users except the sender
+				u.getChatter().receivePublicChat(name, message);//remote invoke function
 		}
 		notifyListener(name + ":" + message);
 	}
@@ -139,28 +139,23 @@ public class ChatServerImpl extends java.rmi.server.UnicastRemoteObject implemen
 	public void fileToAll(String my_name, byte[] fileBytes, String fileName) throws java.rmi.RemoteException {
 		// TODO Auto-generated method stub
 		Iterator itr = chatters.iterator();
-		while (itr.hasNext()) {
+		while (itr.hasNext()) {//traverse all the clients exist in the server
 			User u  = (User)itr.next();
 			if(!u.getName().equals(my_name)) {
-				u.getChatter().getFile(u.getName(),fileBytes,fileName);
+				u.getChatter().getFile(u.getName(),fileBytes,fileName);//remote invoke function, let clients get file
 			}
 		}
-		
 	}
 
 	@Override
 	public void fileToOne(String my_name, String destChatter, byte[] fileBytes, String fileName) throws java.rmi.RemoteException {
 		// TODO Auto-generated method stub
 		Iterator itr = chatters.iterator();
-		try {
-		while (itr.hasNext()) {
-			User u  = (User)itr.next();
-			if(u.getName().equals(destChatter)) {
-				u.getChatter().getFile(u.getName(),fileBytes,fileName);
+		while (itr.hasNext()) {//traverse all the clients exist in the server
+			User u = (User) itr.next();
+			if (u.getName().equals(destChatter)) {
+				u.getChatter().getFile(u.getName(), fileBytes, fileName);//remote invoke function, let a specific client get file
 			}
-		}
-		}catch(Exception e) {
-			System.out.print(e);
 		}
 	}
 }

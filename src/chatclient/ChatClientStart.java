@@ -96,15 +96,15 @@ public class ChatClientStart extends JFrame{
 			}
 		});
 		JMenu options = new JMenu("Option");
-		options.add(conn);
+		options.add(conn);//add option button
 		options.add(exit);
 		menuBar.add(options);
 		setJMenuBar(menuBar);
 	}
 	
 	private void exit() throws RemoteException {
-		hash.remove(my_name);
-		this.dispose();
+		hash.remove(my_name);//remove the user from others chat list
+		this.dispose();//close the frame
 		destroy();
 		System.exit(0);
 	}
@@ -224,8 +224,8 @@ public class ChatClientStart extends JFrame{
 	public boolean connect() throws java.rmi.RemoteException, java.net.MalformedURLException, java.rmi.NotBoundException{
 		boolean ifConnect;
 
-		server = (ChatServer) java.rmi.Naming.lookup("//" + serverAddr + "/ChatServer");
-		ifConnect = server.login(my_name, chatter);
+		server = (ChatServer) java.rmi.Naming.lookup("//" + serverAddr + "/ChatServer");//attach this client to server
+		ifConnect = server.login(my_name, chatter);//let the server accept this client
 		if(ifConnect == false){
 			return false;
 		}
@@ -240,8 +240,8 @@ public class ChatClientStart extends JFrame{
 	// Send a 'Enter' message on screen for newcomer
 	public void receiveEnter(String enterUserName, Chatter chatter, boolean hasEntered) {
 		if (enterUserName != null && chatter != null) {
-			hash.put(enterUserName, chatter);
-			if (!enterUserName.equals(my_name)) {
+			hash.put(enterUserName, chatter);//update the client list
+			if (!enterUserName.equals(my_name)) {//if the login user is not the client himself
 				if (!hasEntered)
 					display(enterUserName + " Enter the ChatRoom");
 				usersBox.addItem(enterUserName);
@@ -251,7 +251,7 @@ public class ChatClientStart extends JFrame{
 	// Send a 'Leave' message on screen
 	public void receiveExit(String exitUserName) {
 		if (exitUserName != null && chatter != null)
-			hash.remove(exitUserName);
+			hash.remove(exitUserName);//update the client list
 		for (int i = 0; i < usersBox.getItemCount(); i++) {
 			if (exitUserName.equals((String) usersBox.getItemAt(i))) {
 				usersBox.removeItem(usersBox.getItemAt(i));
@@ -319,11 +319,11 @@ public class ChatClientStart extends JFrame{
 			if (server != null) {
 				if ("All Users".equals(usersBox.getSelectedItem())) {// send to all user
 					try {
-						server.chat(my_name, message);
+						server.chat(my_name, message);//invoke the server's method
 					} catch (java.rmi.RemoteException ex) {
 						ex.printStackTrace();
 					}
-				} else {// private chat
+				} else {// private chat with a user
 					String destUserName = (String) usersBox.getSelectedItem();
 					Chatter destChatter = (Chatter) hash.get(destUserName);
 					try {
@@ -338,7 +338,7 @@ public class ChatClientStart extends JFrame{
 	}
 	
 	//Convert a file into bytes
-	private byte[] fileTobyte(String filePath) {
+	private byte[] fileTobyte(String filePath) {//transform a file to byte stream
         try {
             System.out.println(filePath + "\n");
             File file = new File(filePath);
@@ -367,7 +367,7 @@ public class ChatClientStart extends JFrame{
 	//send File Method
 	private void sendFile(byte[] fileBytes, String fileName) throws RemoteException {
         if ("All Users".equals(usersBox.getSelectedItem())) {
-            server.fileToAll(my_name, fileBytes, fileName);
+            server.fileToAll(my_name, fileBytes, fileName);//invoke the server's method
         } else {
         	String destChatter = (String)usersBox.getSelectedItem();
             server.fileToOne(my_name, destChatter, fileBytes, fileName);
@@ -425,15 +425,16 @@ public class ChatClientStart extends JFrame{
             e.printStackTrace();
         }
 	}
+
 	 private String byteTofile(byte[] fileBytes, String fileName,String name) {
 	        try {
 	            File directory = new File(name);
 	            if (!directory.exists()) {
-	            	directory.mkdirs();
+	            	directory.mkdirs();//generate a new folder by the name of this user
 	            }
 	            String filePath = directory.getCanonicalPath() + "\\" + fileName;
 	            FileOutputStream fos = new FileOutputStream(filePath);
-	            fos.write(fileBytes);
+	            fos.write(fileBytes);//store file to the folder
 	            fos.close();
 	            return filePath;
 	        } catch (FileNotFoundException e) {

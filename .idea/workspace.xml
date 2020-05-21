@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c85d7c49-20af-4cbc-b225-ce0bcda052a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chatclient/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ChatClientStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chatclient/ChatterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ChatterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chatclient/ConnectDlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ConnectDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatclient/ChatClientStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatclient/ChatClientStart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatserver/ChatServerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatserver/ChatServerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chatserver/ChatServerStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chatserver/ChatServerStart.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -21,18 +20,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chatserver/Main.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1936">
-              <caret line="155" column="56" selection-start-line="155" selection-start-column="56" selection-end-line="155" selection-end-column="56" />
+            <state relative-caret-position="380">
+              <caret line="149" column="57" selection-start-line="149" selection-start-column="57" selection-end-line="149" selection-end-column="57" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#Main#0;class#Main#0" />
                 <element signature="method#layoutComponents#0;class#Main#0" />
                 <element signature="method#setupMenu#0;class#Main#0" />
                 <element signature="method#setupToolBar#0;class#Main#0" />
                 <element signature="method#addTool#0;class#Main#0" />
-                <element signature="method#exit#0;class#Main#0" />
               </folding>
             </state>
           </provider>
@@ -41,13 +39,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
+            <state relative-caret-position="378">
+              <caret line="129" column="77" selection-start-line="129" selection-start-column="77" selection-end-line="129" selection-end-column="77" />
               <folding>
+                <element signature="method#getInstance#0;class#ChatServerImpl#0" />
+                <element signature="method#start#0;class#ChatServerImpl#0" />
+                <element signature="method#stop#0;class#ChatServerImpl#0" />
+                <element signature="method#notifyListener#0;class#ChatServerImpl#0" />
                 <element signature="method#login#0;class#ChatServerImpl#0" />
                 <element signature="method#logout#0;class#ChatServerImpl#0" />
-                <element signature="method#fileToAll#0;class#ChatServerImpl#0" />
-                <element signature="method#fileToOne#0;class#ChatServerImpl#0" />
               </folding>
             </state>
           </provider>
@@ -56,70 +56,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chatclient/ChatClientStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4579">
-              <caret line="404" column="69" selection-start-line="404" selection-start-column="69" selection-end-line="404" selection-end-column="69" />
+            <state relative-caret-position="538">
+              <caret line="428" column="78" selection-start-line="428" selection-start-column="78" selection-end-line="428" selection-end-column="78" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#ChatClient#0;class#ChatClient#0" />
+                <element signature="method#setupMenu#0;class#ChatClient#0" />
+                <element signature="method#exit#0;class#ChatClient#0" />
+                <element signature="method#layoutComponent#0;class#ChatClient#0" />
                 <element signature="method#destroy#0;class#ChatClient#0" />
+                <element signature="method#connect#0;class#ChatClient#0" />
                 <element signature="method#disconnect#0;class#ChatClient#0" />
                 <element signature="method#receiveEnter#0;class#ChatClient#0" />
                 <element signature="method#receiveExit#0;class#ChatClient#0" />
-                <element signature="e#7511#7512#0" expanded="true" />
-                <element signature="e#7564#7565#0" expanded="true" />
                 <element signature="method#addKeymapBindings#0;class#ChatClient#0" />
                 <element signature="method#display#0;class#ChatClient#0" />
                 <element signature="method#sendMessage#0;class#ChatClient#0" />
                 <element signature="method#fileTobyte#0;class#ChatClient#0" />
                 <element signature="method#sendFile#0;class#ChatClient#0" />
                 <element signature="method#serverStop#0;class#ChatClient#0" />
+                <element signature="class#ConnectionAction#0;class#ChatClient#0" />
+                <element signature="method#actionPerformed#0;class#ConnectionAction#0;class#ChatClient#0" />
                 <element signature="method#getFile#0;class#ChatClient#0" />
                 <element signature="method#byteTofile#0;class#ChatClient#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chatclient/ChatterImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chatserver/UserInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/chatclient/ConnectDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chat/Chatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -149,9 +108,12 @@
         <option value="$PROJECT_DIR$/src/chatclient/ChatterImpl.java" />
         <option value="$PROJECT_DIR$/src/chatclient/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/chatserver/Main.java" />
-        <option value="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" />
-        <option value="$PROJECT_DIR$/src/chatclient/ChatClientStart.java" />
         <option value="$PROJECT_DIR$/src/chatclient/ConnectDialog.java" />
+        <option value="$PROJECT_DIR$/src/chatserver/User.java" />
+        <option value="$PROJECT_DIR$/src/chatclient/ChatClientStart.java" />
+        <option value="$PROJECT_DIR$/src/chatserver/ChatServerListener.java" />
+        <option value="$PROJECT_DIR$/src/chatserver/ChatServerStart.java" />
+        <option value="$PROJECT_DIR$/src/chatserver/ChatServerImpl.java" />
       </list>
     </option>
   </component>
@@ -280,15 +242,16 @@
       <workItem from="1589904035282" duration="4657000" />
       <workItem from="1589960386809" duration="10993000" />
       <workItem from="1590025770248" duration="267000" />
-      <workItem from="1590061187046" duration="2510000" />
+      <workItem from="1590061187046" duration="4848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21029000" />
+    <option name="totallyTimeSpent" value="23367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -352,7 +315,14 @@
     <entry file="file://$PROJECT_DIR$/src/chat/Chatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chatclient/ConnectDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -366,65 +336,38 @@
     <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="27" />
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chatserver/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/chatserver/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1936">
-          <caret line="155" column="56" selection-start-line="155" selection-start-column="56" selection-end-line="155" selection-end-column="56" />
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#layoutComponents#0;class#Main#0" />
-            <element signature="method#setupMenu#0;class#Main#0" />
-            <element signature="method#setupToolBar#0;class#Main#0" />
-            <element signature="method#addTool#0;class#Main#0" />
-            <element signature="method#exit#0;class#Main#0" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
+        <state relative-caret-position="378">
+          <caret line="129" column="77" selection-start-line="129" selection-start-column="77" selection-end-line="129" selection-end-column="77" />
           <folding>
+            <element signature="method#getInstance#0;class#ChatServerImpl#0" />
+            <element signature="method#start#0;class#ChatServerImpl#0" />
+            <element signature="method#stop#0;class#ChatServerImpl#0" />
+            <element signature="method#notifyListener#0;class#ChatServerImpl#0" />
             <element signature="method#login#0;class#ChatServerImpl#0" />
             <element signature="method#logout#0;class#ChatServerImpl#0" />
-            <element signature="method#fileToAll#0;class#ChatServerImpl#0" />
-            <element signature="method#fileToOne#0;class#ChatServerImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chatserver/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chatclient/ChatClientStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4579">
-          <caret line="404" column="69" selection-start-line="404" selection-start-column="69" selection-end-line="404" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#destroy#0;class#ChatClient#0" />
-            <element signature="method#disconnect#0;class#ChatClient#0" />
-            <element signature="method#receiveEnter#0;class#ChatClient#0" />
-            <element signature="method#receiveExit#0;class#ChatClient#0" />
-            <element signature="e#7511#7512#0" expanded="true" />
-            <element signature="e#7564#7565#0" expanded="true" />
-            <element signature="method#addKeymapBindings#0;class#ChatClient#0" />
-            <element signature="method#display#0;class#ChatClient#0" />
-            <element signature="method#sendMessage#0;class#ChatClient#0" />
-            <element signature="method#fileTobyte#0;class#ChatClient#0" />
-            <element signature="method#sendFile#0;class#ChatClient#0" />
-            <element signature="method#serverStop#0;class#ChatClient#0" />
-            <element signature="method#getFile#0;class#ChatClient#0" />
-            <element signature="method#byteTofile#0;class#ChatClient#0" />
           </folding>
         </state>
       </provider>
@@ -436,10 +379,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chatclient/ConnectDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/chatclient/ChatClientStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="538">
+          <caret line="428" column="78" selection-start-line="428" selection-start-column="78" selection-end-line="428" selection-end-column="78" />
+          <folding>
+            <element signature="method#ChatClient#0;class#ChatClient#0" />
+            <element signature="method#setupMenu#0;class#ChatClient#0" />
+            <element signature="method#exit#0;class#ChatClient#0" />
+            <element signature="method#layoutComponent#0;class#ChatClient#0" />
+            <element signature="method#destroy#0;class#ChatClient#0" />
+            <element signature="method#connect#0;class#ChatClient#0" />
+            <element signature="method#disconnect#0;class#ChatClient#0" />
+            <element signature="method#receiveEnter#0;class#ChatClient#0" />
+            <element signature="method#receiveExit#0;class#ChatClient#0" />
+            <element signature="method#addKeymapBindings#0;class#ChatClient#0" />
+            <element signature="method#display#0;class#ChatClient#0" />
+            <element signature="method#sendMessage#0;class#ChatClient#0" />
+            <element signature="method#fileTobyte#0;class#ChatClient#0" />
+            <element signature="method#sendFile#0;class#ChatClient#0" />
+            <element signature="method#serverStop#0;class#ChatClient#0" />
+            <element signature="class#ConnectionAction#0;class#ChatClient#0" />
+            <element signature="method#actionPerformed#0;class#ConnectionAction#0;class#ChatClient#0" />
+            <element signature="method#getFile#0;class#ChatClient#0" />
+            <element signature="method#byteTofile#0;class#ChatClient#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chatserver/ChatServerStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="149" column="57" selection-start-line="149" selection-start-column="57" selection-end-line="149" selection-end-column="57" />
+          <folding>
+            <element signature="method#Main#0;class#Main#0" />
+            <element signature="method#layoutComponents#0;class#Main#0" />
+            <element signature="method#setupMenu#0;class#Main#0" />
+            <element signature="method#setupToolBar#0;class#Main#0" />
+            <element signature="method#addTool#0;class#Main#0" />
+          </folding>
         </state>
       </provider>
     </entry>
